@@ -45,7 +45,7 @@ var current_input = ""
 
 
 function App() {
-  const [locationData, updateLocationData] = useState({});
+  let [locationData, updateLocationData] = useState({county: "", lat: "", lon: "", country:"", state:""});
   const baseUrl = "https://api.geoapify.com/v1/geocode/search?text="
   const specifications = "&filter=countrycode:us&limit=5&format=json&apiKey=8c18e6ad3df8403b9ff3203de82711f9"
 //  var test = "https://api.geoapify.com/v1/geocode/search?text=1214-1224%20West%20Van%20Buren%20Street%2C%20Chicago%2C%20IL%2060607%2C%20United%20States%20of%20America&lang=en&limit=5&format=json&apiKey=" + api_key;
@@ -79,7 +79,18 @@ function App() {
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      updateLocationData(data.results[0])
+      // updateLocationData(data.results[0])
+      console.log(data.results[0].city)
+      console.log(data.results[0].county)
+
+      updateLocationData({county : data.results[0].county, lat : data.results[0].lat, lon: data.results[0].lon, country: data.results[0].country, state: data.results[0].state_code});
+      // updateLocationData({lat : data.results[0].lat});
+      console.log("asl;dkfj")
+      console.log(locationData)
+
+      // updateLocationData({county : data.results[0].county, lat: data.results[0].lat, lon: data.results[0].lon , country: data.results[0].country, state: data.results[0].state_code});
+      // console.log(locationData)
+      // console.log(updateLocationData);
     })
     .catch(error => console.log('error', error));
 
