@@ -24,6 +24,24 @@
   color: white;
 }
 
+
+
+
+.progress-div {
+  background-color: rgb(233, 233, 233);
+  border-radius: .5rem;
+}
+
+.progress {
+  background-color: rgb(106, 151, 180);
+  height: 15px;
+  border-radius: 1rem;
+  transition: 1s ease;
+  transition-delay: 0.5s;
+}
+
+
+
 .App-link {
   color: #61dafb;
 }
