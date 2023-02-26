@@ -4,8 +4,8 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   
-const [locationData, updateLocationData] = useState({county: "", lat: "", lon: "", country:"", state:""});
-
+const [locationData, updateLocationData] = useState({formatted: "", county: "", lat: "", lon: "", country:"", state:""});
+let [disasters, updateDisasters] = useState([]);
 
 //   const allowCheckIn = async () => {
 //     if (!app.currentUser) return false;
@@ -33,7 +33,7 @@ const [locationData, updateLocationData] = useState({county: "", lat: "", lon: "
 
   return (
     <DataContext.Provider
-      value={{ locationData, updateLocationData,  }}
+      value={{ locationData, updateLocationData, disasters, updateDisasters  }}
     >
       {children}
     </DataContext.Provider>
