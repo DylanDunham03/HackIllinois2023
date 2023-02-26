@@ -65,21 +65,16 @@ function HomePage(props) {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" >
+        <h1 className='pb-4'>Home Risk Calculator</h1>
+
         <div classname="App">
           <SearchBar onClick={geoFunction} />
         </div>
 
         <h2>{locationData.lon}</h2>
         <h2>{locationData.country}</h2>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
     </div>
   );
